@@ -43,26 +43,28 @@ export const ROUTES: RouteInfo[] = [{
         ]
     },{
         path: '/forms',
-        title: 'TOOLS',
+        title: 'Rcom Debugging',
         type: 'sub',
-        icontype: 'whatshot',
+        icontype: 'dvr',
         collapse: 'forms',
         children: [
+            {path: 'wizard', title: 'Rcom Preview', ab:'RP'},
+            {path: 'extended', title: 'Top Score', ab:'TS'},
             {path: 'regular', title: 'Triggering Tools', ab:'TT'},
-            {path: 'extended', title: 'Extended Forms', ab:'EF'},
-            {path: 'validation', title: 'Validation Forms', ab:'VF'},
-            {path: 'wizard', title: 'Wizard', ab:'W'}
+            {path: 'validation', title: 'Activity Statistics', ab:'AS'},
+            // {path: 'wizard', title: 'Wizard', ab:'W'}
+            {path: 'celeryflower', title: 'Celery Flower', ab:'CF'}
         ]
     },{
         path: '/tables',
-        title: 'Tables',
+        title: 'Debugging Tools',
         type: 'sub',
-        icontype: 'grid_on',
+        icontype: 'bug_report',
         collapse: 'tables',
         children: [
-            {path: 'regular', title: 'Regular Tables', ab:'RT'},
-            {path: 'extended', title: 'Extended Tables', ab:'ET'},
-            {path: 'datatables.net', title: 'Datatables.net', ab:'DT'}
+            {path: 'regular', title: 'JS Validation', ab:'JSV'},
+            {path: 'extended', title: 'JSON Validation', ab:'JV'},
+            {path: 'datatables.net', title: 'JSON Editor', ab:'JE'}
         ]
     },{
         path: '/maps',

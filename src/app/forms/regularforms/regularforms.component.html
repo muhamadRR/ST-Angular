@@ -27,6 +27,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header card-header-icon" data-background-color="blue">
@@ -44,6 +45,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-icon" data-background-color="blue">
@@ -61,6 +63,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-icon" data-background-color="blue">
@@ -82,6 +85,223 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="blue">
+                        <i class="material-icons">autorenew</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Event Validation<small> - this will return the event from the last 24 hours </small></h4>
+                        <form>
+                            <div class="form-group label-floating">
+                                <label class="control-label">Section ID</label>
+                                <input [(ngModel)]="sectionID" type="text" name="feed_id" class="form-control" required="required">
+                            </div>
+                            <button type="submit" class="btn btn-fill btn-info" value="GetEvents" (click)= "changeActionURL()">Trigger</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="blue">
+                        <i class="material-icons">autorenew</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">RCOM debug<small> - this will send the rcom log to the server</small></h4>
+                        <form>
+                            <div class="form-group label-floating">
+                                <label class="control-label">RCOM Request</label>
+                                <input [(ngModel)]="rcomRequest" type="text" name="rcom_request" class="form-control" required="required">
+                                <p id="rcomResponse"></p>
+                            </div>
+                            <button type="submit" class="btn btn-fill btn-info" value="sendRequest" (click)= "rcomLog()">Trigger</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="blue">
+                        <i class="material-icons">autorenew</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Email RCOM debug<small> - this will render the email RECOM</small></h4>
+                        <form>
+                            <div class="form-group label-floating">
+                                <label class="control-label">Email Embed Code</label>
+                                <input [(ngModel)]="emailCode" name="email_code" type="text" class="form-control" required="required">
+                                <p id="email" style="width: 20%;margin-left: 35%;"></p>
+                            </div>
+                            <button type="submit" class="btn btn-fill btn-info" value="emailRender" (click)= "emailRender()">Trigger</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="blue">
+                        <i class="material-icons">autorenew</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">dyID Finder<small> - this will return the user dyID by email/hashedEmail
+                            </small></h4>
+                        <form class="form-horizontal">
+                            <div class="row">
+                                <label class="col-sm-2 label-on-left" >Publisher ID</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label"></label>
+                                        <input [(ngModel)]="startDate" type="email" name="start_date" class="form-control" placeholder="publisher id">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-2 label-on-left">Email/Hashed Email</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label"></label>
+                                        <input [(ngModel)]="endDate" name="end_date" class="form-control" placeholder="example@test.com">
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="row">
+                                        <label class="col-sm-2 label-on-left">OutPut</label>
+                                        <div class="col-sm-10 ">
+                                            <div class="togglebutton">
+                                                <label>
+                                                    <input id="outputToFile" name="OTFisActive" type="checkbox" [(ngModel)]="OTFisActive"> Output To File {{OTFisActive}}
+                                                </label>
+                                            </div>
+                                            <div class="togglebutton">
+                                                <label>
+                                                    <input id="outputToResponse" name="OTRisActive" type="checkbox" [(ngModel)]="OTRisActive"> Output To Response {{OTRisActive}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                </div>
+                            
+                            <div class="row">
+                                <label class="col-md-5"></label>
+                                <div class="col-md-7">
+                                    <div class="form-group form-button">
+                                        <button type="submit" class="btn btn-fill btn-info" (click)= "extractEvents()">Trigger</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-icon" data-background-color="blue">
+                            <i class="material-icons">autorenew</i>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">Event Extractor<small> - this will return the events from the selected date and time
+                                </small></h4>
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <label class="col-sm-2 label-on-left" >Start Date</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group label-floating is-empty">
+                                            <label class="control-label"></label>
+                                            <input [(ngModel)]="startDate" type="email" name="start_date" class="form-control" placeholder="YYYY-MM-DD-HH">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-2 label-on-left">End Date</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group label-floating is-empty">
+                                            <label class="control-label"></label>
+                                            <input [(ngModel)]="endDate" name="end_date" class="form-control" placeholder="YYYY-MM-DD-HH">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <label class="col-sm-2 label-on-left">Section</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group label-floating is-empty">
+                                                <label class="control-label"></label>
+                                                <input [(ngModel)]="sectionID" name="section_ID" class="form-control" placeholder="Section ID">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                            <label class="col-sm-2 label-on-left">Event Type</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-group label-floating is-empty">
+                                                    <label class="control-label"></label>
+                                                    <input  [(ngModel)]="eventType" name="event_type" class="form-control" placeholder="Event Type">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                <label class="col-sm-2 label-on-left">OutPut</label>
+                                                <div class="col-sm-10 ">
+                                                    <div class="togglebutton">
+                                                        <label>
+                                                            <input id="outputToFile" name="OTFisActive" type="checkbox" [(ngModel)]="OTFisActive"> Output To File {{OTFisActive}}
+                                                        </label>
+                                                    </div>
+                                                    <div class="togglebutton">
+                                                        <label>
+                                                            <input id="outputToResponse" name="OTRisActive" type="checkbox" [(ngModel)]="OTRisActive"> Output To Response {{OTRisActive}}
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                
+                                <div class="row">
+                                    <label class="col-md-5"></label>
+                                    <div class="col-md-7">
+                                        <div class="form-group form-button">
+                                            <button type="submit" class="btn btn-fill btn-info" (click)= "extractEvents()">Trigger</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- <div class="col-md-6">
                 <div class="card">
                     <div class="card-header card-header-icon" data-background-color="rose">

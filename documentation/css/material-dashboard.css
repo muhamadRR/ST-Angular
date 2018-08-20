@@ -5711,6 +5711,48 @@ h2.title {
   background-color: #9c27b0;
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
 }
+/* BLUE TEST */
+
+.sidebar[data-background-color="blue"] {
+  background-color: #00bcd4;
+}
+.sidebar[data-background-color="blue"] .nav li > a {
+  color: #FFFFFF;
+}
+.sidebar[data-background-color="blue"] .nav li i {
+  color: rgba(255, 255, 255, 0.8);
+}
+.sidebar[data-background-color="blue"] .nav li.active > [data-toggle="collapse"], .sidebar[data-background-color="blue"] .nav li:hover > [data-toggle="collapse"] {
+  color: #FFFFFF;
+}
+.sidebar[data-background-color="blue"] .nav li.active > [data-toggle="collapse"] i, .sidebar[data-background-color="blue"] .nav li:hover > [data-toggle="collapse"] i {
+  color: rgba(255, 255, 255, 0.8);
+}
+.sidebar[data-background-color="blue"] .user a {
+  color: #FFFFFF;
+}
+.sidebar[data-background-color="blue"] .simple-text {
+  color: #FFFFFF;
+}
+.sidebar[data-background-color="blue"] .sidebar-background:after {
+  background: #00bcd4;
+  opacity: .8;
+}
+.sidebar[data-background-color="blue"] .user:after,
+.sidebar[data-background-color="blue"] .logo:after,
+.sidebar[data-background-color="blue"] .nav li.separator:after {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.sidebar[data-background-color="blue"] .nav li:hover:not(.active) > a,
+.sidebar[data-background-color="blue"] .nav li.active > [data-toggle="collapse"] {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* BLUE TEST */
+.sidebar[data-background-color="blue"] .sidebar-background:after {
+  background: #00bcd4;
+  opacity: .8;
+}
 .sidebar[data-active-color="blue"] li.active > a {
   background-color: #00bcd4;
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);

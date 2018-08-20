@@ -4,10 +4,11 @@ import { ExtendedFormsComponent } from './extendedforms/extendedforms.component'
 import { RegularFormsComponent } from './regularforms/regularforms.component';
 import { ValidationFormsComponent } from './validationforms/validationforms.component';
 import { WizardComponent } from './wizard/wizard.component';
+import { CeleryFlowerComponent } from './celeryflower/celeryflower.component';
 
 export const FormsRoutes: Routes = [
     {
-      path: '',
+      path: '', 
       children: [ {
         path: 'regular',
         component: RegularFormsComponent
@@ -28,6 +29,12 @@ export const FormsRoutes: Routes = [
         children: [ {
             path: 'wizard',
             component: WizardComponent
+        }]
+    }, {
+        path: '',
+        children: [ {
+            path: 'celeryflower',
+            component: CeleryFlowerComponent
         }]
     }
 ];
