@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl, AbstractControl } from '@angular/forms';
 import { PasswordValidation } from './password-validator.component';
 
@@ -31,7 +31,13 @@ export class ValidationFormsComponent implements OnInit {
     login : FormGroup;
     type : FormGroup;
 
-    constructor(private formBuilder: FormBuilder) {}
+    OnInit(){
+
+    }
+
+    constructor(private formBuilder: FormBuilder) {
+      
+    }
  // pattern=" [a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
 
  isFieldValid(form: FormGroup, field: string) {

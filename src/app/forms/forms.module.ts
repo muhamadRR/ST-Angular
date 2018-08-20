@@ -13,6 +13,7 @@ import { RegularFormsComponent } from './regularforms/regularforms.component';
 import { ValidationFormsComponent } from './validationforms/validationforms.component';
 import { WizardComponent } from './wizard/wizard.component';
 import { FieldErrorDisplayComponent } from './validationforms/field-error-display/field-error-display.component';
+import {CeleryFlowerComponent} from './celeryflower/celeryflower.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { FieldErrorDisplayComponent } from './validationforms/field-error-displa
       RegularFormsComponent,
       ValidationFormsComponent,
       WizardComponent,
-      FieldErrorDisplayComponent
+      FieldErrorDisplayComponent,
+      CeleryFlowerComponent
   ]
 })
 

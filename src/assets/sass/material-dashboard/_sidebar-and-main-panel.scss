@@ -351,6 +351,25 @@
             }
         }
     }
+    &[data-background-color="blue"]{
+        background-color: $cyan-500;
+        @include sidebar-background-color($cyan-500, $white-color);
+
+        .user,
+        .logo,
+        .nav li.separator{
+            &:after{
+                background-color: rgba(255,255,255, .3);
+            }
+        }
+
+        .nav{
+            li:hover:not(.active) > a,
+            li.active > [data-toggle="collapse"]{
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
 
     &[data-active-color="purple"]{
         @include set-background-color-button($brand-primary);
