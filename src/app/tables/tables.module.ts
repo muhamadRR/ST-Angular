@@ -9,6 +9,7 @@ import { TablesRoutes } from './tables.routing';
 import { ExtendedTableComponent } from './extendedtable/extendedtable.component';
 import { RegularTableComponent } from './regulartable/regulartable.component';
 import { DataTableComponent } from './datatable.net/datatable.component';
+import { RegexpComponent } from './regexp/RegexpComponent';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DataTableComponent } from './datatable.net/datatable.component';
   declarations: [
       ExtendedTableComponent,
       DataTableComponent,
-      RegularTableComponent
+      RegularTableComponent,
+      RegexpComponent
   ]
 })
 

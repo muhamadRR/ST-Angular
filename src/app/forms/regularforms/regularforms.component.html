@@ -159,7 +159,7 @@
                                 <div class="col-sm-10">
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label"></label>
-                                        <input [(ngModel)]="startDate" type="email" name="start_date" class="form-control" placeholder="publisher id">
+                                        <input [(ngModel)]="publisherID" type="text" name="start_date" class="form-control" placeholder="publisher id">
                                     </div>
                                 </div>
                             </div>
@@ -168,34 +168,44 @@
                                 <div class="col-sm-10">
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label"></label>
-                                        <input [(ngModel)]="endDate" name="end_date" class="form-control" placeholder="example@test.com">
+                                        <input [(ngModel)]="email" name="end_date" class="form-control" placeholder="example@test.com">
                                     </div>
                                 </div>
                             </div>
-                                <div class="row">
-                                        <label class="col-sm-2 label-on-left">OutPut</label>
-                                        <div class="col-sm-10 ">
-                                            <div class="togglebutton">
-                                                <label>
-                                                    <input id="outputToFile" name="OTFisActive" type="checkbox" [(ngModel)]="OTFisActive"> Output To File {{OTFisActive}}
-                                                </label>
-                                            </div>
-                                            <div class="togglebutton">
-                                                <label>
-                                                    <input id="outputToResponse" name="OTRisActive" type="checkbox" [(ngModel)]="OTRisActive"> Output To Response {{OTRisActive}}
-                                                </label>
-                                            </div>
+                            <div class="row">
+                                    <label class="col-sm-2 label-on-left">OutPut</label>
+                                    <div class="col-sm-10 ">
+                                        <!-- <div class="togglebutton">
+                                            <label>
+                                                <input id="outputToFile" name="OTFisActive" type="checkbox" [(ngModel)]="OTFisActive"> Output To File {{OTFisActive}}
+                                            </label>
                                         </div>
-                                </div>
-                            
+                                        <div class="togglebutton">
+                                            <label>
+                                                <input id="outputToResponse" name="OTRisActive" type="checkbox" [(ngModel)]="OTRisActive"> Output To Response {{OTRisActive}}
+                                            </label>
+                                        </div> -->
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" [(ngModel)]="optionsRadios" (click)="setRadioValue('email')" checked="true" value="1"> Email {{radioValue}} 
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" [(ngModel)]="optionsRadios" (click)="setRadioValue('hashed')" value="2"> Hashed Email
+                                            </label>
+                                        </div>
+                                    </div>
+                            </div>
                             <div class="row">
                                 <label class="col-md-5"></label>
                                 <div class="col-md-7">
                                     <div class="form-group form-button">
-                                        <button type="submit" class="btn btn-fill btn-info" (click)= "extractEvents()">Trigger</button>
+                                        <button type="submit" class="btn btn-fill btn-info" (click)= "getdyID()">Trigger</button>
                                     </div>
                                 </div>
                             </div>
+                            <div id="dyID"></div>
                         </form>
                     </div>
                 </div>

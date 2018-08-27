@@ -18,6 +18,14 @@ export interface ChildrenItems {
     title: string;
     ab: string;
     type?: string;
+    children2?: ChildrenItems2[];
+    collapse?: string,
+}
+export interface ChildrenItems2 {
+    path: string;
+    title: string;
+    ab: string;
+    type?: string;
 }
 
 //Menu Items
@@ -64,7 +72,8 @@ export const ROUTES: RouteInfo[] = [{
         children: [
             {path: 'regular', title: 'JS Validation', ab:'JSV'},
             {path: 'extended', title: 'JSON Validation', ab:'JV'},
-            {path: 'datatables.net', title: 'JSON Editor', ab:'JE'}
+            {path: 'datatables.net', title: 'JSON Editor', ab:'JE'},
+            {path: 'regexp', title: 'Regexp Tester', ab:'RT'}
         ]
     },{
         path: '/maps',
@@ -73,7 +82,15 @@ export const ROUTES: RouteInfo[] = [{
         icontype: 'place',
         collapse: 'maps',
         children: [
-            {path: 'google', title: 'Google Maps', ab:'GM'},
+            {path: '/maps', 
+             title: 'Google Maps',
+             type: 'sub',
+             ab:'Jsdf',
+             collapse: 'dfadg',
+             children2: [
+                {path: 'fullscreen', title: 'JS Validation', ab:'JSV'},
+                {path: 'vector', title: 'JSON Validation', ab:'JV'},
+            ]},
             {path: 'fullscreen', title: 'Full Screen Map', ab:'FSM'},
             {path: 'vector', title: 'Vector Map', ab:'VM'}
         ]

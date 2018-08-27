@@ -25,6 +25,9 @@ export class RegularFormsComponent implements OnInit {
     eventType;
     OTFisActive = false;
     OTRisActive = false;
+    idType;
+    email;
+    publisherID;
     
 
     ngOnInit() {}
@@ -90,5 +93,33 @@ export class RegularFormsComponent implements OnInit {
         http.send(JSON.stringify(params));
     }
 
+    setRadioValue(idType: string):void{
+        this.idType=idType;
+    }
     
+    getdyID(){
+        
+        var http = new XMLHttpRequest();
+        var url = "http://spark-ondemand.dynamicyield.com:7200/om";
+        /*
+        var publisherID = JSON.parse(this.publisherID);
+        var email = JSON.parse(this.email);
+        var idType = JSON.parse(JSON.stringify(this.idType));
+    */
+        var dyIDResponse = document.getElementById('dyID');
+        var params;
+        params = { "publisherId": this.publisherID, "cuidId": this.email, "idType": this.idType};
+        
+        http.open("POST", url, true);
+        http.setRequestHeader("Content-type", "application/json");
+        http.onreadystatechange = function () {
+            if (http.readyState == 4 && http.status == 200) {
+                dyIDResponse.innerHTML = http.responseText;
+                console.log(http.responseText)
+            }
+            else { dyIDResponse.innerHTML = 'Error' + http.status + JSON.stringify(params) }
+        }
+        http.send(JSON.stringify(params));
+    }
+
 }
