@@ -6,7 +6,6 @@ COPY ./package.json src/
 
 RUN cd /src && npm install 
 RUN npm install -g @angular/cli@1.4.2
-RUN  npm rebuild node-sass
 
 COPY . /src
 

@@ -1,6 +1,6 @@
 After changing anything in the code: 
-    docker build -t support_dashboard .
+    docker build -t st-angular .
 
 
 To run the server: 
-    docker run -it -p 80:80 support_dashboard
+    docker run -it -p 4200:4200 st-angular
